@@ -1,0 +1,58 @@
+/*
+ * Font override stylesheet
+ * These styles ensure that font changes are applied immediately
+ * and override any default styles to prevent flash of unstyled content
+ */
+
+html[data-font='mono'],
+html[data-font='mono'] body,
+html[data-font='mono'] .font-mono {
+  font-family:
+    'SF Mono', 'Monaco', 'Cascadia Code', 'Roboto Mono', Consolas,
+    'Courier New', monospace !important;
+}
+
+html[data-font='sans'],
+html[data-font='sans'] body,
+html[data-font='sans'] .font-mono {
+  font-family:
+    -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu',
+    'Cantarell', sans-serif !important;
+}
+
+html[data-font='serif'],
+html[data-font='serif'] body,
+html[data-font='serif'] .font-mono {
+  font-family: 'Times New Roman', Times, serif !important;
+}
+
+/* Force style recalculation on font change */
+html[data-font] * {
+  font-family: inherit;
+}
+
+/* Ensure immediate font application without transitions during initial load */
+html.loading {
+  transition: none !important;
+}
+html.loading * {
+  transition: none !important;
+}
+
+/* Prevent transition flashing during initial load */
+html:not(.loading) * {
+  transition: font-family 0.2s ease-out;
+}
+
+/* Initial state */
+html.loading .srcl-action-bar {
+  opacity: 0;
+}
+
+/* Ensure certain elements like code blocks always use monospace */
+pre,
+code {
+  font-family:
+    'SF Mono', 'Monaco', 'Cascadia Code', 'Roboto Mono', Consolas,
+    'Courier New', monospace !important;
+}

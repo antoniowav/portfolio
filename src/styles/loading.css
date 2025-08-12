@@ -1,0 +1,160 @@
+/*
+ * Loading behavior styles
+ * This file provides styles to handle loading states and transitions
+ * to prevent flash of unstyled content (FOUC) and layout shifts
+ */
+
+/* Hide content during initial load */
+html.loading {
+  visibility: visible !important;
+}
+
+html.loading .srcl-action-bar,
+html.loading .srcl-main-content {
+  opacity: 0;
+  visibility: hidden;
+}
+
+/* Show content with a fade-in once loaded */
+html:not(.loading) .srcl-action-bar,
+html:not(.loading) .srcl-main-content {
+  animation: fade-in 0.3s ease-in-out forwards;
+}
+
+/* Skip loading behavior if prefers-reduced-motion is enabled */
+@media (prefers-reduced-motion: reduce) {
+  html.loading .srcl-action-bar,
+  html.loading .srcl-main-content {
+    opacity: 1;
+    visibility: visible;
+  }
+
+  html:not(.loading) .srcl-action-bar,
+  html:not(.loading) .srcl-main-content {
+    animation: none;
+  }
+}
+
+/* Ensure that the page doesn't jump or flash during loading */
+.srcl-action-bar {
+  transition: none !important;
+  min-height: 3.5rem; /* 56px, equivalent to h-14 in Tailwind */
+}
+
+/* Fade in animation */
+@keyframes fade-in {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+/* Set all transitions to none during loading to prevent flickering */
+html.loading * {
+  transition: none !important;
+}
+
+/* Apply proper transitions only after loading is complete */
+html:not(.loading) * {
+  transition:
+    color 0.2s ease,
+    background-color 0.2s ease,
+    border-color 0.2s ease,
+    opacity 0.2s ease;
+}
+
+/* Font-specific transitions for smooth font switching */
+html:not(.loading) body,
+html:not(.loading) .font-mono,
+html:not(.loading) .font-sans,
+html:not(.loading) .font-serif {
+  transition: font-family 0.2s ease-out;
+}
+
+/* Enhanced font transition behaviors */
+html.smooth-font-change,
+html.smooth-font-change * {
+  transition: font-family 0.3s ease-out !important;
+}
+
+/* Prevent layout shifts during font changes */
+html.font-transitioning {
+  letter-spacing: -0.01em;
+}
+
+/* Special class to force font refresh */
+html.font-refresh {
+  animation: font-refresh 0.01s;
+}
+
+@keyframes font-refresh {
+  0% {
+    opacity: 0.99;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+/* Handle theme transitions separately */
+html[data-theme] {
+  transition:
+    background-color 0.3s ease,
+    color 0.3s ease;
+}
+
+/* Ensure the body height fills the viewport during loading */
+html.loading body {
+  min-height: 100vh;
+}
+
+/* Add a subtle loading indicator if needed */
+html.loading::before {
+  content: '';
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 3px;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    var(--color-accent-primary, #00ff00),
+    transparent
+  );
+  opacity: 0;
+  animation: loading-indicator 1.5s ease-in-out infinite;
+  z-index: 9999;
+}
+
+@keyframes loading-indicator {
+  0% {
+    opacity: 0;
+    transform: translateX(-100%);
+  }
+  50% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+    transform: translateX(100%);
+  }
+}
+
+/* Prevent FOUC on buttons specifically */
+.srcl-action-bar button {
+  opacity: 1 !important;
+  transition:
+    background-color 0.2s ease,
+    color 0.2s ease,
+    border-color 0.2s ease !important;
+}
+
+/* Ensure buttons don't shift during font changes */
+html[data-font] button {
+  box-sizing: border-box;
+  text-align: center;
+  white-space: nowrap;
+}
