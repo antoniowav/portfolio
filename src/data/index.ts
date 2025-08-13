@@ -31,10 +31,10 @@ export const author: Author = {
       icon: "linkedin",
     },
     {
-      platform: "Twitter",
-      url: "https://twitter.com/antoniopiattelli",
-      username: "@antoniopiattelli",
-      icon: "twitter",
+      platform: "Instagram",
+      url: "https://instagram.com/okbye_toni",
+      username: "@okbye_toni",
+      icon: "Instagram",
     },
   ],
 };

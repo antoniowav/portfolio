@@ -58,7 +58,7 @@ export const metadata: Metadata = {
     title: 'Antonio Piattelli - Full-Stack Developer',
     description:
       'Full-stack developer passionate about creating elegant solutions to complex problems.',
-    creator: '@antoniopiattelli',
+    creator: '@okbye_toni',
     images: ['/images/og-image.jpg'],
   },
   robots: {
@@ -96,34 +96,21 @@ export default function RootLayout({ children }: RootLayoutProps) {
             __html: `
               (function() {
                 try {
-                  // Add a special class to hide content until it's styled
                   document.documentElement.classList.add('loading');
-
-                  // Apply saved theme immediately to prevent flash
                   const savedTheme = localStorage.getItem('theme') || 'dark';
                   document.documentElement.setAttribute('data-theme', savedTheme);
-
-                  // Apply saved font immediately to prevent flash - simple version
                   const savedFont = localStorage.getItem('fontFamily') || 'mono';
                   document.documentElement.setAttribute('data-font', savedFont);
-
-                  // Apply grid if saved
                   if(localStorage.getItem('gridOverlay') === 'true') {
                     document.documentElement.classList.add('show-grid');
                   }
-
-                  // Force an immediate style recalculation
                   document.documentElement.className = document.documentElement.className;
-
-                  // Wait until all styles have been applied before showing content
                   setTimeout(function() {
                     document.documentElement.classList.remove('loading');
                   }, 0);
                 } catch (e) {
-                  // Fall back to defaults if localStorage fails
                   document.documentElement.setAttribute('data-theme', 'dark');
                   document.documentElement.setAttribute('data-font', 'mono');
-                  // Remove loading class in case of error
                   document.documentElement.classList.remove('loading');
                 }
               })();
@@ -131,24 +118,15 @@ export default function RootLayout({ children }: RootLayoutProps) {
           }}
         />
         <style
-        dangerouslySetInnerHTML={{
-          __html: `
-            html.loading .srcl-action-bar {
-              visibility: hidden;
-            }
-            html:not(.loading) .srcl-action-bar {
-              animation: fadeIn 0.2s ease-in;
-            }
-            @keyframes fadeIn {
-              from { opacity: 0; }
-              to { opacity: 1; }
-            }
-            html {
-              overflow-y: scroll;
-            }
-          `,
-        }}
-      />
+          dangerouslySetInnerHTML={{
+            __html: `
+              html.loading .srcl-action-bar { visibility: hidden; }
+              html:not(.loading) .srcl-action-bar { animation: fadeIn 0.2s ease-in; }
+              @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
+              html { overflow-y: scroll; }
+            `,
+          }}
+        />
       </head>
       <body
         className={`${inter.variable} ${jetbrainsMono.variable} antialiased`}
@@ -165,8 +143,7 @@ export default function RootLayout({ children }: RootLayoutProps) {
               <div className="container py-6">
                 <div className="flex flex-col sm:flex-row justify-between items-center gap-4">
                   <div className="text-sm text-text-tertiary font-mono">
-                    © {new Date().getFullYear()} Antonio Piattelli. All rights
-                    reserved.
+                    © {new Date().getFullYear()} Antonio Piattelli. All rights reserved.
                   </div>
                   <div className="flex items-center gap-4 text-sm text-text-tertiary">
                     <a

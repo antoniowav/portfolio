@@ -153,7 +153,7 @@ export function ContactForm(): JSX.Element {
     >
       {/* Add padding at the bottom to ensure consistent scrollbar */}
       <div style={{ minHeight: '70vh' }}>
-        <div className="bg-bg-secondary border border-border p-4 rounded">
+        <div className="bg-bg-secondary border border-border rounded">
           {submissionState === 'success' ? (
             <div className="py-8">
               <Alert
