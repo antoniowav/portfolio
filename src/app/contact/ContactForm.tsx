@@ -119,9 +119,10 @@ export function ContactForm(): JSX.Element {
         }),
       })
 
+      const data = await response.json()
+
       if (!response.ok) {
-        const errorData = await response.json()
-        throw new Error(errorData.message || 'Failed to submit form')
+        throw new Error(data.message || 'Failed to submit form')
       }
 
       setSubmissionState('success')
@@ -164,6 +165,7 @@ export function ContactForm(): JSX.Element {
                 <Button
                   onClick={() => setSubmissionState('idle')}
                   variant="primary"
+                  className="cursor-pointer"
                 >
                   Send another message
                 </Button>
@@ -270,6 +272,7 @@ export function ContactForm(): JSX.Element {
                   variant="primary"
                   loading={submissionState === 'submitting'}
                   disabled={submissionState === 'submitting'}
+                  className="cursor-pointer"
                 >
                   {submissionState === 'submitting'
                     ? 'Sending...'
