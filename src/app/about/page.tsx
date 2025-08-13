@@ -1,5 +1,6 @@
 import type { Metadata } from 'next'
 
+import { PageLayout } from '@/components/PageLayout'
 import { author, education, experience, quickStats, skills } from '@/data'
 
 export const metadata: Metadata = {
@@ -40,22 +41,26 @@ function toPctClass(v: unknown) {
 
 export default function AboutPage(): JSX.Element {
   return (
-    <section className="container mx-auto px-4 py-8" aria-label="About">
-      <div className="grid grid-cols-1 md:grid-cols-3 gap-12 items-start">
-        <aside className="md:col-span-1 flex flex-col items-start md:items-start">
-          <h1 className="text-2xl font-semibold text-text-primary mb-1">
-            {author.name}
-          </h1>
-          <p className="text-text-secondary text-start md:text-left max-w-sm">
-            {author.bio}
-          </p>
-          <a
-            href={`mailto:${author.email}`}
-            className="mt-4 text-accent-primary"
-          >
-            {author.email}
-          </a>
-        </aside>
+    <PageLayout
+      title="About"
+      maxWidth="full"
+      contentClassName="grid grid-cols-1 md:grid-cols-3 gap-12 items-start"
+      containerClassName="min-h-screen pb-24"
+    >
+      <aside className="md:col-span-1 flex flex-col items-start md:items-start">
+        <h2 className="text-xl font-semibold text-text-primary mb-1">
+          {author.name}
+        </h2>
+        <p className="text-text-secondary text-start md:text-left max-w-sm">
+          {author.bio}
+        </p>
+        <a
+          href={`mailto:${author.email}`}
+          className="mt-4 text-accent-primary"
+        >
+          {author.email}
+        </a>
+      </aside>
 
         <div className="md:col-span-2 space-y-8">
           <section
@@ -222,7 +227,6 @@ export default function AboutPage(): JSX.Element {
             </p>
           </section>
         </div>
-      </div>
-    </section>
+    </PageLayout>
   )
 }

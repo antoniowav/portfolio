@@ -1,5 +1,6 @@
 'use client'
 
+import { PageLayout } from '@/components/PageLayout'
 import { author } from '@/data'
 import Alert from '@/ui/Alert'
 import Button from '@/ui/Button'
@@ -143,16 +144,13 @@ export function ContactForm(): JSX.Element {
   }
 
   return (
-    <section className="container mx-auto px-4 py-8" aria-label="Contact">
-      <div className="max-w-2xl mx-auto">
-        <h1 className="text-2xl font-semibold text-text-primary mb-4">
-          Get in touch
-        </h1>
-        <p className="text-text-secondary mb-8">
-          Have a project in mind or just want to say hello? Send me a message
-          and I'll get back to you as soon as possible.
-        </p>
-
+    <PageLayout
+      title="Get in touch"
+      description="Have a project in mind or just want to say hello? Send me a message and I'll get back to you as soon as possible."
+      maxWidth="2xl"
+    >
+      {/* Add padding at the bottom to ensure consistent scrollbar */}
+      <div style={{ minHeight: '70vh' }}>
         <div className="bg-bg-secondary border border-border p-4 rounded">
           {submissionState === 'success' ? (
             <div className="py-8">
@@ -324,7 +322,7 @@ export function ContactForm(): JSX.Element {
           </div>
         </div>
       </div>
-    </section>
+    </PageLayout>
   )
 }
 

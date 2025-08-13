@@ -131,21 +131,24 @@ export default function RootLayout({ children }: RootLayoutProps) {
           }}
         />
         <style
-          dangerouslySetInnerHTML={{
-            __html: `
-              html.loading .srcl-action-bar {
-                visibility: hidden;
-              }
-              html:not(.loading) .srcl-action-bar {
-                animation: fadeIn 0.2s ease-in;
-              }
-              @keyframes fadeIn {
-                from { opacity: 0; }
-                to { opacity: 1; }
-              }
-            `,
-          }}
-        />
+        dangerouslySetInnerHTML={{
+          __html: `
+            html.loading .srcl-action-bar {
+              visibility: hidden;
+            }
+            html:not(.loading) .srcl-action-bar {
+              animation: fadeIn 0.2s ease-in;
+            }
+            @keyframes fadeIn {
+              from { opacity: 0; }
+              to { opacity: 1; }
+            }
+            html {
+              overflow-y: scroll;
+            }
+          `,
+        }}
+      />
       </head>
       <body
         className={`${inter.variable} ${jetbrainsMono.variable} antialiased`}
@@ -155,7 +158,7 @@ export default function RootLayout({ children }: RootLayoutProps) {
           <SkipToContent />
           <div className="min-h-screen bg-bg-primary text-text-primary flex flex-col srcl-main-content">
             <ActionBar />
-            <main id="main-content" className="flex-1">
+            <main id="main-content" className="flex-1 min-h-[calc(100vh-12rem)]" style={{ paddingBottom: '2rem' }}>
               {children}
             </main>
             <footer className="border-t border-border bg-bg-secondary">
