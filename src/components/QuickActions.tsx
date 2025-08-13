@@ -111,7 +111,7 @@ export const QuickActions = ({ className = '' }: QuickActionsProps) => {
             <Button
               variant="ghost"
               size="sm"
-              className="w-full justify-start text-left"
+              className="w-full justify-start text-left cursor-pointer"
               onClick={handleEmailCopy}
             >
               <span className="font-mono text-xs">

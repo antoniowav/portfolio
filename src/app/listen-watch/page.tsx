@@ -43,7 +43,7 @@ export default function ListenAndWatchPage() {
     <PageLayout
       title="Listen, Watch & Photos"
       description="A collection of my favorite playlists, podcasts, YouTube channels, series/movies, and photos that I recommend. Check back regularly for new additions!"
-      maxWidth="2xl"
+      maxWidth="full"
     >
       <div className="bg-bg-secondary border border-border p-4 rounded mb-8">
         <TabNavigation tabs={tabs} paramName="tab" defaultTab="listen" />

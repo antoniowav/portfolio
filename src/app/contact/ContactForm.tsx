@@ -149,7 +149,7 @@ export function ContactForm(): JSX.Element {
     <PageLayout
       title="Get in touch"
       description="Have a project in mind or just want to say hello? Send me a message and I'll get back to you as soon as possible."
-      maxWidth="2xl"
+      maxWidth="full"
     >
       {/* Add padding at the bottom to ensure consistent scrollbar */}
       <div style={{ minHeight: '70vh' }}>
