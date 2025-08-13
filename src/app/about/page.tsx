@@ -1,5 +1,6 @@
 import type { Metadata } from 'next'
 
+import { DownloadButton } from '@/components/DownloadButton'
 import { PageLayout } from '@/components/PageLayout'
 import { author, education, experience, quickStats, skills } from '@/data'
 
@@ -60,6 +61,32 @@ export default function AboutPage(): JSX.Element {
         >
           {author.email}
         </a>
+
+        <div className="mt-6">
+          <DownloadButton
+            filePath="/documents/Antonio_Piattelli_resume.pdf"
+            fileName="Antonio_Piattelli_Resume.pdf"
+            variant="secondary"
+            size="md"
+            className="font-mono"
+          >
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              className="w-4 h-4 mr-2"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              strokeWidth="2"
+              strokeLinecap="round"
+              strokeLinejoin="round"
+            >
+              <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+              <polyline points="7 10 12 15 17 10"></polyline>
+              <line x1="12" y1="15" x2="12" y2="3"></line>
+            </svg>
+            Download Resume
+          </DownloadButton>
+        </div>
       </aside>
 
         <div className="md:col-span-2 space-y-8">

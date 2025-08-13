@@ -1,9 +1,10 @@
 'use client'
 
+import { DownloadButton } from '@/components/DownloadButton'
 import { navigation } from '@/data'
 import {
-  getCurrentFont,
-  toggleFont as toggleFontScript,
+    getCurrentFont,
+    toggleFont as toggleFontScript,
 } from '@/scripts/fontToggle'
 import type { FontFamily, Theme } from '@/types'
 import Button from '@/ui/Button'
@@ -142,6 +143,29 @@ export const ActionBar = ({ className = '' }: ActionBarProps) => {
                   {item.label}
                 </Link>
               ))}
+              <DownloadButton
+                filePath="/documents/Antonio_Piattelli_resume.pdf"
+                fileName="Antonio_Piattelli_Resume.pdf"
+                variant="outline"
+                size="sm"
+                className="ml-1 font-mono"
+              >
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  className="w-4 h-4 mr-1"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  strokeWidth="2"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                >
+                  <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+                  <polyline points="7 10 12 15 17 10"></polyline>
+                  <line x1="12" y1="15" x2="12" y2="3"></line>
+                </svg>
+                Resume
+              </DownloadButton>
             </nav>
 
             <div className="flex items-center space-x-2">
@@ -281,6 +305,32 @@ export const ActionBar = ({ className = '' }: ActionBarProps) => {
                     {item.label}
                   </Link>
                 ))}
+
+                <div className="px-4 py-2">
+                  <DownloadButton
+                    filePath="/documents/Antonio_Piattelli_resume.pdf"
+                    fileName="Antonio_Piattelli_Resume.pdf"
+                    variant="outline"
+                    size="sm"
+                    className="w-full justify-center font-mono"
+                  >
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      className="w-4 h-4 mr-2"
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      stroke="currentColor"
+                      strokeWidth="2"
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                    >
+                      <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+                      <polyline points="7 10 12 15 17 10"></polyline>
+                      <line x1="12" y1="15" x2="12" y2="3"></line>
+                    </svg>
+                    Resume
+                  </DownloadButton>
+                </div>
 
                 <div className="px-4 pt-4 border-t border-border">
                   <div className="text-xs text-text-tertiary font-mono mb-2">
