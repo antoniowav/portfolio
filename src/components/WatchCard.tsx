@@ -35,13 +35,14 @@ export function WatchCard({ item }: WatchCardProps) {
 
   return (
     <div className="overflow-hidden rounded-lg border border-border bg-bg-primary transition-all hover:border-accent-primary">
-      <div className="relative h-48 w-full overflow-hidden">
+      <div className="relative w-full aspect-[16/9] overflow-hidden">
         <Image
           src={item.imagePath}
           alt={item.title}
           fill
           className="object-cover transition-transform hover:scale-105"
           sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+          priority={item.featured}
         />
       </div>
       <div className="p-4">

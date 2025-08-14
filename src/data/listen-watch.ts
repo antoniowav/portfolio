@@ -1,5 +1,23 @@
-import { StaticImageData } from "next/image";
 import { Photo, photos } from "./quotes-photos";
+import mkbhd from ".//images/mkbhd.png";
+import succession from "./images/succession.png";
+import fireship from "./images/fireship.png";
+import interstellar from "./images/interstellar.png";
+import kurzgesagt from "./images/kurzgesagt.png";
+
+import { StaticImageData } from "next/image";
+
+export interface WatchItem {
+  id: string;
+  title: string;
+  creator: string;
+  description: string;
+  link: string;
+  imagePath: string | StaticImageData;
+  date: string;
+  featured: boolean;
+  category: "youtube" | "series" | "movie";
+}
 
 // Export Photo type and photos array
 export type { Photo };
@@ -15,18 +33,6 @@ export interface ListenItem {
   date: string;
   featured: boolean;
   category: "playlist" | "podcast";
-}
-
-export interface WatchItem {
-  id: string;
-  title: string;
-  creator: string;
-  description: string;
-  link: string;
-  imagePath: string;
-  date: string;
-  featured: boolean;
-  category: "youtube" | "series" | "movie";
 }
 
 // Sample listen data - replace with your own recommendations
@@ -100,7 +106,7 @@ export const watchItems: WatchItem[] = [
     description:
       "Quick and informative coding tutorials with a unique style and humor.",
     link: "https://www.youtube.com/@Fireship",
-    imagePath: "/images/listen-watch/fireship.jpg",
+    imagePath: fireship,
     date: "2024-05-02",
     featured: true,
     category: "youtube",
@@ -112,7 +118,7 @@ export const watchItems: WatchItem[] = [
     description:
       "The series centers on the Roy family, the owners of global media and entertainment conglomerate Waystar RoyCo, and their fight for control of the company amidst uncertainty about the health of the family's patriarch.",
     link: "https://www.imdb.com/title/tt7660850/",
-    imagePath: "/images/listen-watch/succession.jpg",
+    imagePath: succession,
     date: "2024-04-29",
     featured: true,
     category: "series",
@@ -124,7 +130,7 @@ export const watchItems: WatchItem[] = [
     description:
       "Tech reviews and tutorials on various technologies and gadgets.",
     link: "https://www.youtube.com/@mkbhd",
-    imagePath: "/images/listen-watch/mkbhd.jpg",
+    imagePath: mkbhd,
     date: "2024-04-25",
     featured: true,
     category: "youtube",
@@ -136,7 +142,7 @@ export const watchItems: WatchItem[] = [
     description:
       "The film follows a group of astronauts who travel through a wormhole near Saturn in search of a new home for mankind.",
     link: "https://www.imdb.com/title/tt0816692/",
-    imagePath: "/images/listen-watch/interstellar.jpg",
+    imagePath: interstellar,
     date: "2024-04-20",
     featured: false,
     category: "movie",
@@ -148,7 +154,7 @@ export const watchItems: WatchItem[] = [
     description:
       "Beautiful animations that make science accessible and thought-provoking.",
     link: "https://www.youtube.com/@kurzgesagt",
-    imagePath: "/images/listen-watch/kurzgesagt.jpg",
+    imagePath: kurzgesagt,
     date: "2024-04-15",
     featured: false,
     category: "youtube",
