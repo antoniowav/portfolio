@@ -1,6 +1,9 @@
 // Global SCSS for Terminal Portfolio
 // Based on SRCL (www-sacred) terminal aesthetic
 
+// Import component styles
+@import './components/projects.scss';
+
 // CSS Reset and Base Styles
 *,
 *::before,

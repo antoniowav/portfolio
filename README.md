@@ -24,7 +24,7 @@ A modern, accessible developer portfolio with a distinctive terminal aesthetic b
 1. **Clone the repository**
 
 ```bash
-git clone https://github.com/antoniopiattelli/terminal-portfolio.git
+git clone https://github.com/antoniowav/terminal-portfolio.git
 cd terminal-portfolio
 ```
 

@@ -141,11 +141,11 @@ export const QuickActions = ({ className = '' }: QuickActionsProps) => {
                 <h3 className="font-mono text-text-primary font-medium">
                   GitHub
                 </h3>
-                <p className="text-text-tertiary text-sm">@antoniopiattelli</p>
+                <p className="text-text-tertiary text-sm">@antoniowav</p>
               </div>
             </div>
             <Button
-              href="https://github.com/antoniopiattelli"
+              href="https://github.com/antoniowav"
               external
               variant="ghost"
               size="sm"

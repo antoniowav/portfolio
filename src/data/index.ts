@@ -20,7 +20,7 @@ export const author: Author = {
   social: [
     {
       platform: "GitHub",
-      url: "https://github.com/antoniopiattelli",
+      url: "https://github.com/antoniowav",
       username: "antoniopiattelli",
       icon: "github",
     },
@@ -43,7 +43,7 @@ export const author: Author = {
 export const professionalLinks: ProfessionalLink[] = [
   {
     type: "github",
-    url: "https://github.com/antoniopiattelli",
+    url: "https://github.com/antoniowav",
     label: "View GitHub Profile",
   },
   {
@@ -270,265 +270,6 @@ export const education: Education[] = [
   },
 ];
 
-// Sample Projects
-export const projects: Project[] = [
-  {
-    id: "terminal-portfolio",
-    slug: "terminal-portfolio",
-    title: "Terminal-Style Portfolio",
-    summary:
-      "A modern developer portfolio with a distinctive terminal aesthetic built using Next.js and SRCL components.",
-    description:
-      "This portfolio website showcases projects and skills with a unique terminal-inspired design. Built with performance and accessibility in mind, featuring dark/light themes, keyboard navigation, and optimized for all devices.",
-    tech: ["Next.js", "TypeScript", "SCSS", "React", "Vercel"],
-    category: "Web Development",
-    dateStart: "2024-01-01",
-    impactScore: 85,
-    featured: true,
-    links: [
-      {
-        type: "demo",
-        url: "https://portfolio.piattelli.dev",
-        label: "View Live Site",
-      },
-      {
-        type: "repo",
-        url: "https://github.com/antoniopiattelli/terminal-portfolio",
-        label: "View Source",
-      },
-    ],
-    images: [
-      {
-        src: "/images/projects/terminal-portfolio/hero.jpg",
-        alt: "Terminal Portfolio Homepage",
-        caption: "Homepage with terminal-style typing animation",
-        width: 1200,
-        height: 800,
-      },
-      {
-        src: "/images/projects/terminal-portfolio/projects.jpg",
-        alt: "Projects Grid View",
-        caption: "Responsive projects grid with filtering",
-        width: 1200,
-        height: 800,
-      },
-    ],
-    sections: {
-      overview: {
-        title: "Project Overview",
-        content:
-          "A developer portfolio website designed to stand out with a terminal aesthetic while maintaining excellent performance and accessibility. The site serves as both a showcase of projects and a demonstration of modern web development best practices.",
-      },
-      problem: {
-        title: "Challenge",
-        content:
-          "Creating a unique visual identity that appeals to developers while ensuring the site remains accessible, fast, and functional across all devices. The challenge was balancing the terminal aesthetic with modern UX expectations.",
-      },
-      approach: {
-        title: "Technical Approach",
-        content:
-          "Built with Next.js for optimal performance and SEO, using TypeScript for type safety. Implemented custom SCSS following the SRCL design system for consistent terminal styling. Used modern CSS features for responsive design and animations.",
-        codeSnippets: [
-          {
-            language: "typescript",
-            filename: "components/TypingAnimation.tsx",
-            code: `export const TypingAnimation = ({ text }: { text: string }) => {
-  const [displayText, setDisplayText] = useState('')
-  const [isTyping, setIsTyping] = useState(true)
-
-  useEffect(() => {
-    let i = 0
-    const timer = setInterval(() => {
-      if (i < text.length) {
-        setDisplayText(text.slice(0, i + 1))
-        i++
-      } else {
-        setIsTyping(false)
-        clearInterval(timer)
-      }
-    }, 50)
-
-    return () => clearInterval(timer)
-  }, [text])
-
-  return (
-    <span className="typing-text">
-      {displayText}
-      {isTyping && <span className="cursor">|</span>}
-    </span>
-  )
-}`,
-            description: "React component for terminal-style typing animation",
-          },
-        ],
-      },
-      results: {
-        title: "Results & Impact",
-        content:
-          "Achieved sub-1s load times, 95+ Lighthouse scores across all categories, and full keyboard accessibility. The unique design has received positive feedback from the developer community and potential employers.",
-      },
-    },
-    metadata: {
-      readTime: 5,
-      difficulty: "intermediate",
-      status: "completed",
-    },
-  },
-  {
-    id: "task-manager-api",
-    slug: "task-manager-api",
-    title: "Go Task Manager API",
-    summary:
-      "A RESTful API built with Go for managing tasks and projects with authentication, real-time updates, and comprehensive testing.",
-    description:
-      "A robust task management API featuring JWT authentication, real-time WebSocket updates, and comprehensive CRUD operations. Built following Go best practices with extensive testing and documentation.",
-    tech: ["Go", "PostgreSQL", "JWT", "WebSockets", "Docker", "Redis"],
-    category: "Backend Development",
-    dateStart: "2023-08-01",
-    dateEnd: "2023-11-30",
-    impactScore: 92,
-    featured: true,
-    links: [
-      {
-        type: "repo",
-        url: "https://github.com/antoniopiattelli/go-task-api",
-        label: "View Repository",
-      },
-      {
-        type: "article",
-        url: "https://dev.to/antoniopiattelli/building-scalable-apis-with-go",
-        label: "Read Article",
-      },
-    ],
-    images: [
-      {
-        src: "/images/projects/go-task-api/architecture.jpg",
-        alt: "API Architecture Diagram",
-        caption: "System architecture and data flow",
-        width: 1000,
-        height: 600,
-      },
-    ],
-    sections: {
-      overview: {
-        title: "Project Overview",
-        content:
-          "A production-ready task management API designed for scalability and performance. Features include user authentication, real-time notifications, task organization, and comprehensive API documentation.",
-      },
-      technical: {
-        title: "Technical Implementation",
-        content:
-          "Built using Go with clean architecture principles, PostgreSQL for data persistence, Redis for caching and sessions, and WebSockets for real-time updates.",
-        codeSnippets: [
-          {
-            language: "go",
-            filename: "handlers/tasks.go",
-            code: `func (h *TaskHandler) CreateTask(w http.ResponseWriter, r *http.Request) {
-    var req CreateTaskRequest
-    if err := json.NewDecoder(r.Body).Decode(&req); err != nil {
-        http.Error(w, "Invalid JSON", http.StatusBadRequest)
-        return
-    }
-
-    if err := h.validator.Validate(req); err != nil {
-        http.Error(w, err.Error(), http.StatusBadRequest)
-        return
-    }
-
-    userID := getUserIDFromContext(r.Context())
-    task, err := h.service.CreateTask(r.Context(), userID, req)
-    if err != nil {
-        http.Error(w, "Failed to create task", http.StatusInternalServerError)
-        return
-    }
-
-    w.Header().Set("Content-Type", "application/json")
-    w.WriteHeader(http.StatusCreated)
-    json.NewEncoder(w).Encode(task)
-}`,
-            description: "Example API handler with proper error handling",
-          },
-        ],
-      },
-      results: {
-        title: "Outcomes",
-        content:
-          "Successfully deployed API handling 1000+ requests per minute with 99.9% uptime. Comprehensive test suite with 95% code coverage and detailed API documentation.",
-      },
-    },
-    metadata: {
-      readTime: 8,
-      difficulty: "advanced",
-      status: "completed",
-    },
-  },
-  {
-    id: "react-dashboard",
-    slug: "react-dashboard",
-    title: "Analytics Dashboard",
-    summary:
-      "A responsive analytics dashboard built with React and TypeScript, featuring real-time data visualization and customizable widgets.",
-    description:
-      "An interactive analytics dashboard providing real-time insights through customizable charts and widgets. Features drag-and-drop layout, theme customization, and responsive design.",
-    tech: ["React", "TypeScript", "Chart.js", "Tailwind CSS", "React Query"],
-    category: "Frontend Development",
-    dateStart: "2023-03-01",
-    dateEnd: "2023-06-30",
-    impactScore: 88,
-    featured: true,
-    links: [
-      {
-        type: "demo",
-        url: "https://dashboard.piattelli.dev",
-        label: "View Demo",
-      },
-      {
-        type: "repo",
-        url: "https://github.com/antoniopiattelli/react-dashboard",
-        label: "Source Code",
-      },
-    ],
-    images: [
-      {
-        src: "/images/projects/react-dashboard/overview.jpg",
-        alt: "Dashboard Overview",
-        caption: "Main dashboard with multiple widgets",
-        width: 1400,
-        height: 900,
-      },
-      {
-        src: "/images/projects/react-dashboard/mobile.jpg",
-        alt: "Mobile Dashboard View",
-        caption: "Responsive mobile layout",
-        width: 375,
-        height: 812,
-      },
-    ],
-    sections: {
-      overview: {
-        title: "Project Overview",
-        content:
-          "A comprehensive analytics dashboard designed for business intelligence. Provides real-time data visualization, customizable layouts, and responsive design for optimal user experience across devices.",
-      },
-      approach: {
-        title: "Development Approach",
-        content:
-          "Built with React and TypeScript for type safety, using Chart.js for data visualization and Tailwind CSS for responsive styling. Implemented React Query for efficient data fetching and caching.",
-      },
-      results: {
-        title: "Key Features & Results",
-        content:
-          "Successfully delivered a fully responsive dashboard with 15+ widget types, drag-and-drop customization, dark/light themes, and real-time data updates. Achieved 98 Lighthouse performance score.",
-      },
-    },
-    metadata: {
-      readTime: 6,
-      difficulty: "intermediate",
-      status: "completed",
-    },
-  },
-];
-
 // Sample Blog Posts
 export const blogPosts: BlogPost[] = [
   {
@@ -574,15 +315,13 @@ export const blogPosts: BlogPost[] = [
 ];
 
 // Featured project IDs (for homepage)
-export const featuredProjectIds = projects
-  .filter((project) => project.featured)
-  .slice(0, 3)
-  .map((project) => project.id);
+// Get featured project IDs dynamically from GitHub at runtime
+export const featuredProjectIds: string[] = [];
 
 // Quick stats for about page
 export const quickStats = {
   yearsOfExperience: new Date().getFullYear() - 2019,
-  projectsCompleted: projects.length,
-  technologiesUsed: Array.from(new Set(projects.flatMap((p) => p.tech))).length,
+  projectsCompleted: 0, // This will be updated dynamically
+  technologiesUsed: 0, // This will be updated dynamically
   coffeeCupsConsumed: "∞",
 };
