@@ -4,6 +4,8 @@ import { Project } from '@/types';
 import { Metadata } from 'next';
 import { Suspense } from 'react';
 
+export const revalidate = 3600;
+
 export const metadata: Metadata = {
   title: 'Projects | Antonio Piattelli',
   description: 'Explore the portfolio of projects built by Antonio Piattelli, including web applications, APIs, and more.',
@@ -15,10 +17,9 @@ export const metadata: Metadata = {
 };
 
 async function ProjectsContent() {
-  // Fetch projects directly from GitHub
   const githubUsername = 'antoniowav';
 
-  // Fetch GitHub repositories
+  // ISR cached by lib: no dynamic fetch during build
   const repos = await fetchUserRepositories(githubUsername, {
     sort: 'pushed',
     direction: 'desc',
@@ -26,10 +27,7 @@ async function ProjectsContent() {
     per_page: 100,
   });
 
-  // Convert GitHub repos to Project format
   const githubProjects = convertReposToProjects(repos);
-
-  // Use all GitHub projects
   const allProjects: Project[] = githubProjects;
 
   return (
