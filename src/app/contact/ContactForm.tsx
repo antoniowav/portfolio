@@ -173,7 +173,7 @@ export function ContactForm(): JSX.Element {
             </div>
           ) : (
             <form onSubmit={handleSubmit} className="space-y-6">
-              <div className="grid grid-cols-1 gap-6">
+              <div className="grid grid-cols-1 p-4 gap-6">
                 <Input
                   name="name"
                   label="Name"
@@ -266,7 +266,7 @@ export function ContactForm(): JSX.Element {
                 />
               )}
 
-              <div className="flex justify-end mt-4">
+              <div className="flex p-4 justify-end mt-4">
                 <Button
                   type="submit"
                   variant="primary"
