@@ -20,15 +20,13 @@ export function DownloadButton({
   // Derive display file name from path if not provided
   const displayFileName = fileName || filePath.split('/').pop() || 'file'
 
-  const baseClasses = 'inline-flex items-center justify-center rounded-md font-medium transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-accent-primary disabled:opacity-50'
-
+  const baseClasses = 'inline-flex items-center justify-center rounded-md font-medium transition-colors border border-solid focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-accent-primary disabled:opacity-50'
   // Variant styles
   const variantClasses = {
     primary: 'bg-accent-primary text-white hover:bg-accent-secondary',
     secondary: 'bg-bg-tertiary text-text-primary hover:bg-bg-quaternary',
     outline: 'border border-border bg-transparent hover:bg-bg-tertiary text-text-primary',
-    ghost: 'bg-transparent hover:bg-bg-tertiary text-text-primary',
-  }
+    ghost: 'bg-transparent text-text-secondary border-transparent hover:text-text-primary hover:border-border focus-visible:ring-text-primary',  }
 
   // Size styles
   const sizeClasses = {

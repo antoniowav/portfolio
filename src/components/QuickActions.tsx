@@ -2,6 +2,7 @@
 
 import Button from '@/ui/Button'
 import { useState } from 'react'
+import { DownloadButton } from './DownloadButton'
 
 interface QuickActionsProps {
   className?: string
@@ -70,14 +71,15 @@ export const QuickActions = ({ className = '' }: QuickActionsProps) => {
                 <p className="text-text-tertiary text-sm">PDF • 2 pages</p>
               </div>
             </div>
-            <Button
-              href="/resume"
+            <DownloadButton
+              filePath="/documents/Antonio_Piattelli_resume.pdf"
+              fileName="Antonio_Piattelli_Resume.pdf"
               variant="ghost"
-              size="sm"
+              size="md"
               className="w-full justify-start text-left"
             >
               <span className="font-mono text-xs">./download_resume.sh</span>
-            </Button>
+            </DownloadButton>
           </div>
 
           {/* Email Contact */}
@@ -210,7 +212,7 @@ export const QuickActions = ({ className = '' }: QuickActionsProps) => {
               <span className="text-success">✓</span> Email: Available 24/7
             </div>
             <div>
-              <span className="text-success">✓</span> GitHub: 50+ repositories
+              <span className="text-success">✓</span> GitHub: 9 repositories
               public
             </div>
             <div>
@@ -233,13 +235,9 @@ export const QuickActions = ({ className = '' }: QuickActionsProps) => {
             <Button href="/projects" variant="primary" size="md">
               Explore My Work
             </Button>
-            <Button href="/blog" variant="secondary" size="md">
-              Read My Articles
+            <Button href="/listen-watch" variant="secondary" size="md">
+              Listen & Watch
             </Button>
-          </div>
-
-          <div className="mt-6 text-text-tertiary text-sm font-mono">
-            Or scroll down to see featured projects ↓
           </div>
         </div>
       </div>

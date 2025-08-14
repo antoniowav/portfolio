@@ -159,7 +159,7 @@ export const HeroSection = () => {
                 href="/projects"
                 variant="primary"
                 size="lg"
-                className="min-w-[200px]"
+                className="min-w-[200px] cursor-pointer"
               >
                 <svg
                   className="w-5 h-5 mr-2"
@@ -181,7 +181,7 @@ export const HeroSection = () => {
                 href="/contact"
                 variant="secondary"
                 size="lg"
-                className="min-w-[200px]"
+                className="min-w-[200px] cursor-pointer"
               >
                 <svg
                   className="w-5 h-5 mr-2"
@@ -210,7 +210,7 @@ export const HeroSection = () => {
             >
               <div className="text-center p-4 bg-bg-secondary border border-border">
                 <div className="text-2xl font-mono text-accent-primary mb-1">
-                  5+
+                  3+
                 </div>
                 <div className="text-sm text-text-tertiary font-mono">
                   Years Experience
@@ -218,7 +218,7 @@ export const HeroSection = () => {
               </div>
               <div className="text-center p-4 bg-bg-secondary border border-border">
                 <div className="text-2xl font-mono text-accent-primary mb-1">
-                  20+
+                  10+
                 </div>
                 <div className="text-sm text-text-tertiary font-mono">
                   Projects Built
@@ -226,18 +226,10 @@ export const HeroSection = () => {
               </div>
               <div className="text-center p-4 bg-bg-secondary border border-border">
                 <div className="text-2xl font-mono text-accent-primary mb-1">
-                  15+
+                  8+
                 </div>
                 <div className="text-sm text-text-tertiary font-mono">
                   Technologies
-                </div>
-              </div>
-              <div className="text-center p-4 bg-bg-secondary border border-border">
-                <div className="text-2xl font-mono text-accent-primary mb-1">
-                  ∞
-                </div>
-                <div className="text-sm text-text-tertiary font-mono">
-                  Coffee Cups
                 </div>
               </div>
             </div>
