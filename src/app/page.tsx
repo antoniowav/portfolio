@@ -6,7 +6,7 @@ import type { Metadata } from 'next'
 import { Suspense } from 'react'
 
 export const metadata: Metadata = {
-  title: 'Home',
+  title: 'Home | Antonio Piattelli',
   description:
     'Full-stack developer passionate about creating elegant solutions to complex problems. Experienced in React, TypeScript, Go, and modern web technologies.',
   openGraph: {
