@@ -5,7 +5,7 @@ export const metadata: Metadata = {
   description:
     'A collection of inspirational quotes and personal photography that I enjoy sharing.',
   openGraph: {
-    title: 'Quotes & Photos - Antonio Piattelli',
+    title: 'Antonio Piattelli - Quotes & Photos',
     description:
       'A collection of inspirational quotes and personal photography that I enjoy sharing.',
     images: [

@@ -10,7 +10,7 @@ export const metadata: Metadata = {
   title: 'Projects | Antonio Piattelli',
   description: 'Explore the portfolio of projects built by Antonio Piattelli, including web applications, APIs, and more.',
   openGraph: {
-    title: 'Projects | Antonio Piattelli Portfolio',
+    title: 'Antonio Piattelli - Projects',
     description: 'Explore the portfolio of projects built by Antonio Piattelli, including web applications, APIs, and more.',
     images: '/images/og-projects.jpg',
   },

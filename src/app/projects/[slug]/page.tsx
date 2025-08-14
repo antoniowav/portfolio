@@ -120,7 +120,7 @@ const ProjectDetailPage = async ({ params }: ProjectDetailPageProps) => {
           {project.images.map((image, index) => (
             <div key={index} className="project-detail__image-container">
               <FallbackImage
-                src={image.src}
+                src={`https://opengraph.githubassets.com/1/antoniowav/${project.slug}`}
                 alt={image.alt || `${project.title} image ${index + 1}`}
                 width={image.width || 1200}
                 height={image.height || 800}

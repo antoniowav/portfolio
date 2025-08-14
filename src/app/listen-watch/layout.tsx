@@ -5,7 +5,7 @@ export const metadata: Metadata = {
   description:
     'A collection of my favorite playlists, podcasts, YouTube channels, series/movies, and photos that I recommend.',
   openGraph: {
-    title: 'Listen, Watch & Photos - Antonio Piattelli',
+    title: 'Antonio Piattelli - Listen, Watch & Photos',
     description:
       'A collection of my favorite playlists, podcasts, YouTube channels, series/movies, and photos that I recommend.',
     images: [

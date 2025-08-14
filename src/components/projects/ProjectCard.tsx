@@ -21,20 +21,14 @@ export const ProjectCard: React.FC<ProjectCardProps> = ({ project, index }) => {
     >
       <Link href={`/projects/${project.slug}`} className="project-card__link">
         <div className="project-card__image-container">
-          {project.images && project.images.length > 0 ? (
             <FallbackImage
-              src={project.images[0].src}
+              src={`https://opengraph.githubassets.com/1/antoniowav/${project.slug}`}
               alt={project.images[0].alt || project.title}
               width={project.images[0].width || 800}
               height={project.images[0].height || 600}
               className="project-card__image"
               priority={index < 4}
             />
-          ) : (
-            <div className="project-card__placeholder">
-              {project.title.charAt(0)}
-            </div>
-          )}
           {project.featured && (
             <div className="project-card__featured-badge">Featured</div>
           )}
