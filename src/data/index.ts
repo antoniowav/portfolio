@@ -199,66 +199,55 @@ export const skills: Skill[] = [
 // Experience
 export const experience: Experience[] = [
   {
-    id: "senior-developer-2023",
-    title: "Senior Full-Stack Developer",
-    company: "TechCorp Solutions",
-    companyUrl: "https://techcorp.example.com",
-    location: "Remote",
-    startDate: "2023-01-01",
+    id: "fullstack-developer-2024",
+    title: "Full-Stack Software Developer",
+    company: "Zimpler AB",
+    companyUrl: "https://zimpler.com",
+    location: "Gothenburg, Sweden",
+    startDate: "2024-10-07",
     current: true,
     description:
-      "Lead development of modern web applications using React, TypeScript, and Go.",
+      "Software development of modern web applications using React, TypeScript, and Go.",
     responsibilities: [
       "Architect and implement scalable web applications",
-      "Mentor junior developers and conduct code reviews",
       "Collaborate with product teams on feature planning",
       "Optimize application performance and user experience",
     ],
     technologies: ["React", "TypeScript", "Go", "PostgreSQL", "Docker", "AWS"],
-    achievements: [
-      "Reduced application load time by 40% through optimization",
-      "Led migration from legacy system to modern stack",
-      "Implemented CI/CD pipeline reducing deployment time by 60%",
-    ],
+    achievements: [],
   },
   {
-    id: "fullstack-developer-2021",
-    title: "Full-Stack Developer",
-    company: "StartupXYZ",
-    companyUrl: "https://startupxyz.example.com",
-    location: "San Francisco, CA",
-    startDate: "2021-06-01",
-    endDate: "2022-12-31",
+    id: "frontend-developer-2021",
+    title: "Frontend Developer",
+    company: "Axel Arigato",
+    companyUrl: "https://axelarigato.com",
+    location: "Gothenburg, Sweden",
+    startDate: "2023-04-01",
+    endDate: "2024-07-31",
     current: false,
-    description:
-      "Developed and maintained multiple client projects using modern web technologies.",
+    description: "Developed and maintained the company website.",
     responsibilities: [
-      "Built responsive web applications from design mockups",
-      "Implemented RESTful APIs and database schemas",
+      "Built a responsive website from design mockups",
+      "Implemented RESTful APIs",
       "Collaborated with designers and product managers",
       "Maintained and debugged existing codebases",
+      "Implemented components for Storyblok CMS",
     ],
-    technologies: ["React", "Node.js", "Python", "MongoDB", "Express.js"],
-    achievements: [
-      "Delivered 8 successful client projects on time",
-      "Improved code test coverage from 60% to 90%",
-      "Implemented automated testing and deployment workflows",
-    ],
+    technologies: ["React", "Node.js", "Next.js", "Storyblok"],
+    achievements: [],
   },
 ];
 
 // Education
 export const education: Education[] = [
   {
-    id: "cs-degree",
-    degree: "Bachelor of Science in Computer Science",
-    school: "University of Technology",
-    schoolUrl: "https://university.example.com",
-    location: "Tech City, CA",
-    startDate: "2017-09-01",
-    endDate: "2021-05-31",
-    gpa: "3.8/4.0",
-    honors: ["Magna Cum Laude", "Dean's List (6 semesters)"],
+    id: "frontend-development-degree",
+    degree: "Frontend Development within e-commerce degree",
+    school: "Medieinstitutet",
+    schoolUrl: "https://medieinstitutet.se/",
+    location: "Gothenburg, Sweden",
+    startDate: "2020-09-01",
+    endDate: "2023-05-31",
     relevantCoursework: [
       "Data Structures and Algorithms",
       "Software Engineering",
@@ -266,6 +255,8 @@ export const education: Education[] = [
       "Web Development",
       "Computer Networks",
       "Operating Systems",
+      "Software Architecture",
+      "E-commerce",
     ],
   },
 ];
@@ -320,8 +311,8 @@ export const featuredProjectIds: string[] = [];
 
 // Quick stats for about page
 export const quickStats = {
-  yearsOfExperience: new Date().getFullYear() - 2019,
-  projectsCompleted: 0, // This will be updated dynamically
-  technologiesUsed: 0, // This will be updated dynamically
+  yearsOfExperience: new Date().getFullYear() - 2022,
+  projectsCompleted: 12,
+  technologiesUsed: 10,
   coffeeCupsConsumed: "∞",
 };
