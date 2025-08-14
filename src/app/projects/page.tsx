@@ -7,7 +7,7 @@ import { Suspense } from 'react';
 export const revalidate = 3600;
 
 export const metadata: Metadata = {
-  title: 'Projects | Antonio Piattelli',
+  title: 'Projects',
   description: 'Explore the portfolio of projects built by Antonio Piattelli, including web applications, APIs, and more.',
   openGraph: {
     title: 'Antonio Piattelli - Projects',

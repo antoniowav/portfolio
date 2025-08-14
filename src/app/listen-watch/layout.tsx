@@ -1,7 +1,7 @@
 import type { Metadata } from 'next'
 
 export const metadata: Metadata = {
-  title: 'Listen, Watch & Photos - Antonio Piattelli',
+  title: 'Listen, Watch & Photos',
   description:
     'A collection of my favorite playlists, podcasts, YouTube channels, series/movies, and photos that I recommend.',
   openGraph: {

@@ -1,7 +1,7 @@
 import type { Metadata } from 'next'
 
 export const metadata: Metadata = {
-  title: 'Quotes & Photos - Antonio Piattelli',
+  title: 'Quotes & Photos',
   description:
     'A collection of inspirational quotes and personal photography that I enjoy sharing.',
   openGraph: {
