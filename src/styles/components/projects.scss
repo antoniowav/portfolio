@@ -25,7 +25,7 @@
     position: relative;
 
     &::after {
-      content: '_';
+      content: "_";
       color: var(--color-accent-primary);
       animation: blink 1s step-end infinite;
     }
@@ -104,11 +104,52 @@
 
 .projects-grid-categories {
   display: flex;
-
   gap: var(--spacing-sm);
+
+  /* mobile: horizontal chip scroller */
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+  padding-bottom: 4px; /* keeps scrollbar from overlapping chips */
+
+  /* edge-to-edge on mobile without causing page overflow */
+  margin-inline: calc(var(--spacing-md) * -1);
+  padding-inline: var(--spacing-md);
+
+  /* nice fade at the edges (safe to skip if unwanted) */
+  mask-image: linear-gradient(
+    to right,
+    transparent,
+    black 16px,
+    black calc(100% - 16px),
+    transparent
+  );
+  -webkit-mask-image: linear-gradient(
+    to right,
+    transparent,
+    black 16px,
+    black calc(100% - 16px),
+    transparent
+  );
+
+  /* hide scrollbars (WebKit + Firefox) */
+  scrollbar-width: none;
+  &::-webkit-scrollbar {
+    display: none;
+  }
+
+  /* desktop: go back to normal inline chips (no scroll) */
+  @media (min-width: 768px) {
+    overflow: visible;
+    margin-inline: 0;
+    padding-inline: 0;
+    mask-image: none;
+    -webkit-mask-image: none;
+  }
 }
 
 .projects-grid-category-button {
+  flex: 0 0 auto;
+  white-space: nowrap;
   background-color: var(--color-bg-tertiary);
   border: 1px solid var(--color-border);
   color: var(--color-text-secondary);
@@ -481,8 +522,13 @@
 
 // Animation for cursor blinking effect
 @keyframes blink {
-  0%, 100% { opacity: 1; }
-  50% { opacity: 0; }
+  0%,
+  100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0;
+  }
 }
 
 // Project Detail Page Styles
@@ -521,7 +567,7 @@
     position: relative;
 
     &::after {
-      content: '_';
+      content: "_";
       color: var(--color-accent-primary);
       animation: blink 1s step-end infinite;
     }
@@ -744,7 +790,7 @@
     position: relative;
 
     &::after {
-      content: '_';
+      content: "_";
       color: var(--color-accent-primary);
       animation: blink 1s step-end infinite;
     }
