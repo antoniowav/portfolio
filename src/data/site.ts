@@ -48,7 +48,7 @@ export const profile = {
 // Short, editable "currently shipping" line — building-in-public momentum.
 export const now = {
   label: 'Now',
-  text: 'Shipping Kontra and building Everly, the wedding planner.',
+  text: 'Shipping Kontra, polishing the Radio player and the Italian food directory.',
 }
 
 export const products: Product[] = [
@@ -59,13 +59,6 @@ export const products: Product[] = [
     url: 'https://usekontra.com',
     featured: true,
     status: 'live',
-  },
-  {
-    name: 'Everly',
-    tagline: 'Wedding planning, beautifully.',
-    tag: 'Web app',
-    url: 'https://everly-nu.vercel.app',
-    status: 'building',
   },
   {
     name: 'Radio',
@@ -80,6 +73,13 @@ export const products: Product[] = [
     tag: 'Web app',
     url: 'https://tavola-se.netlify.app/',
     status: 'live',
+  },
+  {
+    name: 'Notion Templates',
+    tagline: 'The systems I run my life and studio on. Get in touch to be first.',
+    tag: 'Templates',
+    url: '#follow', // in-page → contact / connect section
+    status: 'building',
   },
   // Append KORE, Conductor, etc. as they ship.
 ]
