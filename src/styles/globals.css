@@ -28,9 +28,6 @@
   html {
     -webkit-text-size-adjust: 100%;
     scroll-behavior: smooth;
-    /* `proximity` snaps when you settle near a section but never traps you
-       mid-scroll the way `mandatory` does (trackpad/touch). */
-    scroll-snap-type: y proximity;
   }
 
   body {
@@ -97,18 +94,23 @@
     transform: scaleX(1);
   }
 
-  /* Full-viewport Swiss panel with snap. `safe center` centers short sections
-     but top-aligns ones taller than the viewport (e.g. Products) so their top
-     never clips and every row stays reachable. No vertical padding here — it
-     would push every section past one screen and break the snap. */
+  /* Mobile-first: sections flow naturally with comfortable rhythm — no forced
+     full-screen height (which left big dead gaps and clipped tall content).
+     From md up, restore the full-viewport, vertically-centered Swiss panel. */
   .panel {
     position: relative;
-    min-height: 100vh;
-    min-height: 100dvh;
-    scroll-snap-align: start;
-    display: flex;
-    flex-direction: column;
-    justify-content: safe center;
+    padding-block: clamp(4.5rem, 13vw, 7rem);
+  }
+
+  @media (min-width: 768px) {
+    .panel {
+      display: flex;
+      min-height: 100vh;
+      min-height: 100dvh;
+      flex-direction: column;
+      justify-content: center;
+      padding-block: clamp(4rem, 8vh, 7rem);
+    }
   }
 }
 

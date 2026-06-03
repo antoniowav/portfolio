@@ -4,7 +4,7 @@ const year = 2026 // build-time constant; bump on redesigns
 
 export function Footer() {
   return (
-    <footer className="border-t border-line" style={{ scrollSnapAlign: 'start' }}>
+    <footer className="border-t border-line">
       <div className="mx-auto max-w-shell px-6 py-14 lg:px-10 lg:pr-24">
         <div className="flex flex-col gap-12 lg:flex-row lg:justify-between">
           <div className="max-w-xs">

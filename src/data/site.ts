@@ -74,13 +74,6 @@ export const products: Product[] = [
     url: 'https://tavola-se.netlify.app/',
     status: 'live',
   },
-  {
-    name: 'Notion Templates',
-    tagline: 'The systems I run my life and studio on. Get in touch to be first.',
-    tag: 'Templates',
-    url: '#follow', // in-page → contact / connect section
-    status: 'building',
-  },
   // Append KORE, Conductor, etc. as they ship.
 ]
 
